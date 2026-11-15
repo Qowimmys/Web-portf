@@ -356,19 +356,21 @@ h2.t {
 
 .about {
   display: grid;
-  grid-template-columns: 320px 1fr;
+  grid-template-columns: 320px minmax(0, 1fr);
   gap: 56px;
   align-items: center;
 }
 
-.photo {
-  aspect-ratio: 1;
+.about .photo {
+  display: block;
+  width: 100%;
+  max-width: 320px;
+  height: auto;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
   border-radius: 28px;
-  display: grid;
-  place-items: center;
-  font: 700 5rem Syne, sans-serif;
-  background: linear-gradient(135deg, rgba(140, 155, 255, .25), rgba(94, 224, 208, .15));
   border: 1px solid var(--line);
+  background: linear-gradient(135deg, rgba(140, 155, 255, .25), rgba(94, 224, 208, .15));
 }
 
 .about h3 {
@@ -605,7 +607,7 @@ footer {
   .links {
     display: none;
   }
-  .photo {
+  .about .photo {
     max-width: 240px;
   }
   .hero {
